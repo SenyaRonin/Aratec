@@ -7,11 +7,7 @@ const AllUsers = () => {
 
   const { data: creators, isLoading, isError: isErrorCreators } = useGetUsers();
 
-  if (isErrorCreators) {
-    toast({ title: "Something went wrong." });
-    
-    return;
-  }
+  
 
   return (
     <div className="common-container">
@@ -31,6 +27,12 @@ const AllUsers = () => {
       </div>
     </div>
   );
+
+  if (isErrorCreators) {
+    toast({ title: "Something went wrong." });
+    
+    return;
+  }
 };
 
 export default AllUsers;
